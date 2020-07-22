@@ -12,8 +12,9 @@ const db = mongoose.connection;
 
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 
-app.set("view-engine", "ejs");
+app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout.ejs");
 
@@ -31,9 +32,10 @@ db.on("error", (err) => {
 });
 db.once("open", () => console.log("Connected to dabase"));
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Listening to port 3000");
-});
-
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
+
+app.listen(process.env.PORT || 3030, () => {
+  console.log("Listening to port 5000");
+});
