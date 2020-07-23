@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 const db = mongoose.connection;
 
@@ -21,6 +22,7 @@ app.set("layout", "layouts/layout.ejs");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+app.use(methodOverride("_method"));
 
 mongoose.connect(process.env.DATABASE_URI, {
   useNewUrlParser: true,
@@ -36,6 +38,8 @@ app.use("/", indexRouter);
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
 
-app.listen(process.env.PORT || 3030, () => {
-  console.log("Listening to port 5000");
+const PORT = 5000;
+
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Listening to Port ${PORT}`);
 });
