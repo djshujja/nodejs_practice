@@ -3,6 +3,8 @@
 @import "shared/header.css";
 @import "shared/buttons.css";
 @import "shared/form.css";
+@import "shared/authors.css";
+@import "shared/books.css";
 
 :root {
   font-family: "Roboto", sans-serif;
@@ -35,4 +37,13 @@ body {
 .page-header {
   font-size: 2rem;
   font-weight: 200;
+}
+
+.error-message {
+  margin: auto;
+  background-color: rgb(189, 0, 0);
+  color: white;
+  border-radius: 0.5rem;
+  width: 20%;
+  padding: 10px;
 }
