@@ -43,7 +43,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 });
 
 app.use("/", userRouter);
-app.use(checkAuthenticated);
+// app.use(checkAuthenticated);
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);

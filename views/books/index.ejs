@@ -1,4 +1,8 @@
-<h2 class="page-header">Search Books</h2>
+<div class="title-div-full">
+  <h2 class="page-header text-center">Search Books</h2>
+</div>
+<div class="div-card-full">
+
 <form action="/books" method="GET">
   <div class="form-row">
     <div class="form-item">
@@ -29,6 +33,8 @@
     <button class="btn btn-primary" type="submit">Search</button>
   </div>
 </form>
+</div>
+
 <br />
 <div>
   <%- include('../partials/bookGrid', {books: books, large: true}) %>

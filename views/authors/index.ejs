@@ -1,4 +1,7 @@
-<h2 class="page-header">Search Authors</h2>
+<div class="title-div-full">
+  <h2 class="page-header text-center">Search Authors</h2>
+</div>
+<div class="div-card-full">
 <form action="/authors" method="GET">
   <div class="form-row">
     <div class="form-item">
@@ -12,9 +15,13 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </div>
 </form>
+</div>
+
 <br />
 <% authors.forEach(author =>{ %>
-<div class="author-row">
+  <div class="author-card-full">
+
+  <div class="author-row">
   <div class="author-name"><%= author.name %></div>
   <div class="btn-row">
     <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
@@ -22,4 +29,6 @@
     <%- include('../partials/deleteForm.ejs', {url:`/authors/${author.id}`}) %>
   </div>
 </div>
+</div>
+
 <% }) %>
