@@ -1,0 +1,16 @@
+.div-card{
+    background-color: white;
+    color: black;
+    padding: 5rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+.auth-error-message{
+    background-color: red;
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+
+}

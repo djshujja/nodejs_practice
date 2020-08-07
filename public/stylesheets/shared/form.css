@@ -27,6 +27,9 @@
 .form-row-end {
   justify-content: flex-end;
 }
+.form-row-center{
+  justify-content: center;
+}
 
 .form-item > label {
   font-size: var(--form-label-font-size);

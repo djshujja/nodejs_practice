@@ -1,5 +1,5 @@
 :root {
-  --color-btn-primary-background: rgb(5, 155, 255);
+  --color-btn-primary-background:rgb(0, 127, 247);
   --color-btn-primary-background-dark: rgb(71, 153, 246);
   --color-btn-primary-text: white;
   --color-btn-border: ;
@@ -9,11 +9,11 @@
 }
 
 .btn {
-  border: 0.01rem solid var(--color-btn-border);
+  border: 0.1rem solid var(--color-btn-border);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
   cursor: pointer;
   text-decoration: none;
   text-align: cneter;

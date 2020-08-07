@@ -5,6 +5,7 @@
 @import "shared/form.css";
 @import "shared/authors.css";
 @import "shared/books.css";
+@import "shared/auth.css";
 
 :root {
   font-family: "Roboto", sans-serif;
@@ -19,9 +20,10 @@
 }
 
 body {
-  background: #5c258d;
+  /* background: #5c258d;
   background: -webkit-linear-gradient(to right, #4389a2, #5c258d);
-  background: linear-gradient(to right, #4389a2, #5c258d);
+  background: linear-gradient(to right, #4389a2, #5c258d); */
+  background-color: rgb(0, 32, 100);
 }
 
 .containter-main {
@@ -39,6 +41,20 @@ body {
   font-weight: 200;
 }
 
+.text-center{
+  text-align: center;   
+}
+
+.title-div{
+  /* color: var(--color-primary); */
+  color: white;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+  background-color: black;
+  padding: 1px;
+
+}
 .error-message {
   margin: auto;
   background-color: rgb(189, 0, 0);

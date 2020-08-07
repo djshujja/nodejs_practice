@@ -1,12 +1,32 @@
-<div>
-  <h2>Register Page</h2>
+<div class="title-div">
+  <h2 class="page-header text-center">Register Page</h2>
+</div>
+  <div class="div-card">
   <form action="/register" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" />
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" />
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-    <button type="submit">Register</button>
+    <div class="form-row">
+      <div  class="form-item">
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+      </div>
+    </div>
+    <!-- <label for="email">Email</label>
+    <input type="email" name="email" id="email" /> -->
+      <div class="form-row">
+        <div class="form-item">
+
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+      </div>
+        <div class="form-row btn-row form-row-center">
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        <div class="form-row form-row-center"> 
+       
+          <p>Already have account? <a href="/login">Login Now</a></p>
+          
+          
+        </div>
   </form>
 </div>

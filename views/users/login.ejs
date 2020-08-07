@@ -1,15 +1,37 @@
-<div>
-  <h2>Login Page</h2>
-  <% if(messages) { %>
-  <div>
-    <% console.log(messages)%>
-  </div>
+
+<div class="title-div">
+
+  <h2 class="page-header text-center">Login Page</h2>
+</div>
+<div class="div-card">
+  <% if(messages.error) { %>
+
+    <p class="auth-error-message"><%= messages.error %>, please try again!</p>
   <% } %>
   <form action="/login" method="POST">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" />
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-    <button type="submit">login</button>
-  </form>
+    <div class="form-row"> 
+      <div class="form-item">
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username" />
+      
+      </div>
+    </div>
+    <div class="form-row">
+
+       <div class="form-item">
+          
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      </div>
+      <div class="form-row btn-row form-row-center">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+      <div class="form-row form-row-center"> 
+       
+        <p>Don't have an account? <a href="/register">Register now</a></p>
+        
+        
+      </div>
+    </form>
 </div>

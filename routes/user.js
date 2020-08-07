@@ -1,28 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
 const passport = require("passport");
-const userSchema = require("../models/user");
-const initPassport = require("../loginLogic/passport");
+const User = require("../models/user");
 const { checkNotAuthenticated } = require("../loginLogic/auth");
 const flash = require("express-flash");
+const LocalStrategy = require("passport-local").Strategy;
 
-// const flash = require()
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 router.use(flash());
-const user = [];
-initPassport(
-  passport,
-  (email) => {
-    return user.find((user) => user.email === email);
-  },
-  (id) => {
-    return user.find((user) => user.id === id);
-  }
-);
-
-router.get("/login", checkNotAuthenticated, (req, res) => {
-  res.render("users/login");
-});
 
 router.get("/register", checkNotAuthenticated, (req, res) => {
   res.render("users/register");
@@ -31,30 +18,37 @@ router.get("/register", checkNotAuthenticated, (req, res) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/success",
+    successRedirect: "/",
     failureRedirect: "/login",
-    faliureFlash: true,
+    failureFlash: true,
   })
 );
 
-router.post("/register", async (req, res) => {
-  try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    user.push({
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPassword,
-    });
-    res.redirect("/login");
-  } catch (error) {
-    res.send(error);
-  }
-  console.log(user);
+router.get("/login", checkNotAuthenticated, (req, res) => {
+  res.render("users/login");
 });
+router.post("/register", (req, res) => {
+  // const { username } = req.body;
+  try {
+    // User.register(
+    //   new User(username, req.body.password, (error) => {
+    //     if (error) return console.log(error);
+    //   })
+    // );
 
-router.get("/users", (req, res) => {
-  res.send(user);
+
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+      if(err){
+          console.log(err);
+          return res.render("users/register");
+      }
+      passport.authenticate("local")(req, res, function(){
+          res.redirect("/");
+      });
+  });
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 // module.exports = router;
