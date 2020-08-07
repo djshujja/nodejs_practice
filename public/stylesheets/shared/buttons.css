@@ -35,6 +35,10 @@
   color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary-background);
 }
+.btn-success {
+  color: white;
+  background-color: green;
+}
 .btn-primary:hover {
   color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary-background-dark);

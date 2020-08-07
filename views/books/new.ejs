@@ -1,8 +1,14 @@
-<h2 class="page-header">New Book</h2>
-<form action="/books" method="POST">
-  <%- include('_form_fields.ejs') %>
-  <div class="form-row btn-row form-row-end">
-    <a class="btn btn-danger" href="/books">Cancel</a>
-    <button class="btn btn-primary" type="submit">Create</button>
-  </div>
-</form>
+<div class="title-div-full">
+
+  <h2 class="page-header text-center">New Book</h2>
+</div>
+<div class="div-card-full">
+
+  <form action="/books" method="POST">
+    <%- include('_form_fields.ejs') %>
+    <div class="form-row btn-row form-row-end">
+      <a class="btn btn-danger" href="/books">Cancel</a>
+      <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+  </form>
+</div>

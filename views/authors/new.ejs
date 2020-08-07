@@ -1,9 +1,16 @@
-<h2 class="page-header">New Author</h2>
+<div class="title-div">
 
-<form action="/authors" method="POST">
-  <%- include('_form_fields.ejs') %>
-  <div class="form-row form-row-end btn-row">
-    <a class="btn btn-danger" href="/authors">Cancel</a>
-    <button class="btn btn-primary" type="submit">Create</button>
-  </div>
-</form>
+  <h2 class="page-header text-center">New Author</h2>
+</div>
+
+<div class="div-card">
+
+  <form action="/authors" method="POST">
+    <%- include('_form_fields.ejs') %>
+    <div class="form-row form-row-end btn-row">
+      <a class="btn btn-danger" href="/authors">Cancel</a>
+      <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+  </form>
+  
+</div>

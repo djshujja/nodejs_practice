@@ -41,12 +41,14 @@ nav{
 }
 
 .header-nav ul li a {
-  background-color: rgb(223, 223, 223);
+  /* background-color: rgb(223, 223, 223); */
+  
   border-radius: 0.2rem;
   text-decoration: none;
   color: var(--nav-font-color);
   font-weight: var(--nav-link-font-weight);
   padding: 1rem;
+  
   margin: 0.5rem;
 }
 

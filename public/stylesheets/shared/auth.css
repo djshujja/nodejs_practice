@@ -1,9 +1,24 @@
 .div-card{
     background-color: white;
     color: black;
+    padding: 3rem;
+    width: 50%;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    display: block;
+    margin: auto;    
+}
+
+.div-card-full{
+    background-color: white;
+    color: black;
     padding: 5rem;
     padding-bottom: 1rem;
     border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;    
 }
 .auth-error-message{
     background-color: red;
